@@ -27,12 +27,15 @@ const Home = () => {
       try {
         setLoading(true);
 
-        const response = await fetch("http://localhost:8080/api/v1/post", {
-          method: "GET",
-          headers: {
-            CONTENT_TYPE: "application/json",
-          },
-        });
+        const response = await fetch(
+          "https://dall-e-production-f3ca.up.railway.app/api/v1/post",
+          {
+            method: "GET",
+            headers: {
+              CONTENT_TYPE: "application/json",
+            },
+          }
+        );
 
         if (response.ok) {
           const result = await response.json();
